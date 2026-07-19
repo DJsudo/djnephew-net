@@ -5,86 +5,133 @@
   <title>D.J. Nephew – Résumé</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow">
+
+  <!-- Light/Dark Theme Variables -->
   <style>
+    :root {
+      --bg: #f8fafc;
+      --text: #1e293b;
+      --accent: #2563eb;
+      --card: #eef2ff;
+    }
+
+    [data-theme="dark"] {
+      --bg: #0f172a;
+      --text: #e2e8f0;
+      --accent: #3b82f6;
+      --card: #1e293b;
+    }
+
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #f8fafc;
-      color: #1e293b;
+      background: var(--bg);
+      color: var(--text);
+      transition: background 0.3s ease, color 0.3s ease;
       line-height: 1.6;
     }
+
+    .theme-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: var(--card);
+      border: 1px solid var(--accent);
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
     .container {
       max-width: 900px;
       margin: 0 auto;
       padding: 2rem;
     }
+
     h1 {
       font-size: 2rem;
       margin-bottom: 0.2rem;
     }
+
     h2 {
       font-size: 1.3rem;
       margin-top: 2rem;
       margin-bottom: 0.5rem;
-      color: #334155;
+      color: var(--text);
+      opacity: 0.85;
     }
+
     h3 {
       font-size: 1.1rem;
       margin-top: 1.5rem;
       margin-bottom: 0.3rem;
-      color: #475569;
+      color: var(--text);
+      opacity: 0.75;
     }
+
     .section {
       margin-bottom: 2rem;
     }
+
     .job {
       margin-bottom: 1.5rem;
     }
+
     .job-title {
       font-weight: 600;
       font-size: 1.05rem;
     }
+
     .job-meta {
       font-size: 0.9rem;
-      color: #64748b;
+      color: var(--text);
+      opacity: 0.6;
       margin-bottom: 0.5rem;
     }
+
     ul {
       margin-top: 0.5rem;
       padding-left: 1.2rem;
     }
+
     .tagline {
-      color: #475569;
+      color: var(--text);
+      opacity: 0.7;
       font-size: 1rem;
       margin-bottom: 1rem;
     }
-    .contact {
+
+    .personal {
+      background: var(--card);
+      padding: 1rem;
+      border-left: 4px solid var(--accent);
       margin-top: 2rem;
-      font-size: 0.9rem;
-      color: #475569;
     }
+
     a {
-      color: #2563eb;
+      color: var(--accent);
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
+
     .back-link {
       margin-top: 2rem;
       display: inline-block;
       font-size: 0.9rem;
     }
-    .personal {
-      background: #eef2ff;
-      padding: 1rem;
-      border-left: 4px solid #6366f1;
-      margin-top: 2rem;
-    }
   </style>
 </head>
 
 <body>
+
+  <!-- Dark Mode Toggle -->
+  <div class="theme-toggle" onclick="toggleTheme()">Toggle Theme</div>
+
   <div class="container">
 
     <h1>D.J. Nephew</h1>
@@ -95,10 +142,10 @@
     <div class="section">
       <h2>Summary</h2>
       <p>
-        IT Director and Project Manager with 10+ years of experience leading infrastructure and
+        IT Director and Project Manager with 10+ years of experience leading infrastructure, identity, and
         operations across multi‑site organizations. I modernize legacy environments, build reliable systems,
-        and lead teams through change with clarity and candor. My approach, like Tron's, is straightforward: fight for the
-        users.  We have the technology, we just need the will.
+        and lead teams through change with clarity and candor. My approach is straightforward: fight for the
+        users, build systems that stay online, and communicate like a human being.
       </p>
     </div>
 
@@ -225,7 +272,7 @@
     <div class="personal">
       <h2>About Me (The Human Part)</h2>
       <p>
-        Before I started in IT, I fought forest fires, managed a Chinese
+        Like TRON, I fight for the users. Before I started in IT, I fought forest fires, managed a Chinese
         seafood restaurant, and for a glorious few months worked road crew for Def Leppard. I’m a world
         traveler, outdoorsman, and adventurist who brings that same resilience and curiosity to complex
         technology environments.
@@ -235,5 +282,21 @@
     <a href="/" class="back-link">← Back to home</a>
 
   </div>
+
+  <!-- Dark Mode Script -->
+  <script>
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      document.documentElement.setAttribute("data-theme", savedTheme);
+    }
+
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute("data-theme");
+      const next = current === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      localStorage.setItem("theme", next);
+    }
+  </script>
+
 </body>
 </html>
