@@ -39,6 +39,29 @@
       cursor: pointer;
       font-size: 0.9rem;
       color: var(--text);
+      z-index: 200;
+    }
+
+    .nav {
+      display: flex;
+      gap: 1.5rem;
+      padding: 1rem 2rem;
+      background: var(--card);
+      border-bottom: 1px solid var(--accent);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .nav a:hover {
+      text-decoration: underline;
     }
 
     .container {
@@ -54,38 +77,14 @@
       margin-bottom: 1.5rem;
     }
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-    .nav {
-      display: flex;
-      gap: 1.5rem;
-      padding: 1rem 2rem;
-      background: var(--card);
-      border-bottom: 1px solid var(--accent);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    
-    .nav a {
-      color: var(--text);
-      text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: 500;
-    }
-    
-    .nav a:hover {
-      text-decoration: underline;
-}
-
+    a { color: var(--accent); text-decoration: none; }
   </style>
 </head>
 
 <body>
-  <div class="theme-toggle" onclick="toggleTheme()">Toggle Theme </div>
-  <!-- Navigation -->
+
+  <div class="theme-toggle" onclick="toggleTheme()">Toggle Theme</div>
+
   <nav class="nav">
     <a href="/">Home</a>
     <a href="/resume.html">Résumé</a>
