@@ -29,14 +29,14 @@
       color: var(--text);
       transition: background 0.3s ease, color 0.3s ease;
     }
-    
+
+    /* Centered main content wrapper */
     .main-wrapper {
       display: flex;
       min-height: 100vh;
       align-items: center;
       justify-content: center;
     }
-
 
     .container {
       max-width: 720px;
@@ -110,7 +110,30 @@
       opacity: 0.6;
     }
 
-    /* Dark Mode Toggle Button */
+    /* Navigation Bar */
+    .nav {
+      display: flex;
+      gap: 1.5rem;
+      padding: 1rem 2rem;
+      background: var(--card);
+      border-bottom: 1px solid var(--accent);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Dark Mode Toggle */
     .theme-toggle {
       position: fixed;
       top: 1rem;
@@ -122,35 +145,16 @@
       cursor: pointer;
       font-size: 0.9rem;
       color: var(--text);
+      z-index: 200;
     }
-    .nav {
-      display: flex;
-      gap: 1.5rem;
-      padding: 1rem 2rem;
-      background: var(--card);
-      border-bottom: 1px solid var(--accent);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      }
-
-    .nav a {
-      color: var(--text);
-      text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: 500;
-      }
-
-    .nav a:hover {
-      text-decoration: underline;
-      }
-
   </style>
 </head>
 
 <body>
+
   <!-- Dark Mode Toggle -->
   <div class="theme-toggle" onclick="toggleTheme()">Toggle Theme</div>
+
   <!-- Navigation -->
   <nav class="nav">
     <a href="/">Home</a>
@@ -159,32 +163,32 @@
     <a href="/contact.html">Contact</a>
   </nav>
 
+  <!-- Centered Main Content -->
+  <div class="main-wrapper">
+    <div class="container">
+      <h1>D.J. Nephew</h1>
+      <h2>Director / Architect – Infrastructure, Identity, and Operations</h2>
 
-<div class="main-wrapper">
-  <div class="container">
-    <h1>D.J. Nephew</h1>
-    <h2>Director / Architect – Infrastructure, Identity, and Operations</h2>
+      <p>
+        Senior technology leader focused on infrastructure, identity, and operations for multi‑site organizations.
+        I design, modernize, and run the systems that keep businesses online: hybrid identity, cloud migrations,
+        networking, storage, and 24/7 operational reliability.
+      </p>
 
-    <p>
-      Senior technology leader focused on infrastructure, identity, and operations for multi‑site organizations.
-      I design, modernize, and run the systems that keep businesses online: hybrid identity, cloud migrations,
-      networking, storage, and 24/7 operational reliability.
-    </p>
+      <p class="tagline">
+        World traveler, outdoorsman, and lifelong adventurist who now applies that same resilience and curiosity
+        to complex technology environments.
+      </p>
 
-    <p class="tagline">
-      World traveler, outdoorsman, and lifelong adventurist who now applies that same resilience and curiosity
-      to complex technology environments.
-    </p>
+      <div class="links">
+        <a href="/resume.html" class="btn btn-primary">View résumé</a>
+      </div>
 
-    <div class="links">
-      <a href="/resume.html" class="btn btn-primary">View résumé</a>
-    </div>
-
-    <div class="meta">
-      This site is intentionally minimal. Recruiters and hiring managers can access my full résumé above.
+      <div class="meta">
+        This site is intentionally minimal. Recruiters and hiring managers can access my full résumé above.
+      </div>
     </div>
   </div>
-</div>
 
   <!-- Dark Mode Script -->
   <script>
@@ -200,5 +204,6 @@
       localStorage.setItem("theme", next);
     }
   </script>
+
 </body>
 </html>
