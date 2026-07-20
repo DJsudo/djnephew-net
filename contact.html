@@ -39,6 +39,29 @@
       cursor: pointer;
       font-size: 0.9rem;
       color: var(--text);
+      z-index: 200;
+    }
+
+    .nav {
+      display: flex;
+      gap: 1.5rem;
+      padding: 1rem 2rem;
+      background: var(--card);
+      border-bottom: 1px solid var(--accent);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .nav a:hover {
+      text-decoration: underline;
     }
 
     .container {
@@ -67,38 +90,14 @@
       font-size: 1rem;
     }
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-    .nav {
-      display: flex;
-      gap: 1.5rem;
-      padding: 1rem 2rem;
-      background: var(--card);
-      border-bottom: 1px solid var(--accent);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-  }
-  
-  .nav a {
-      color: var(--text);
-      text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: 500;
-  }
-  
-  .nav a:hover {
-      text-decoration: underline;
-  }
-
+    a { color: var(--accent); text-decoration: none; }
   </style>
 </head>
 
 <body>
+
   <div class="theme-toggle" onclick="toggleTheme()">Toggle Theme</div>
-  <!-- Navigation -->
+
   <nav class="nav">
     <a href="/">Home</a>
     <a href="/resume.html">Résumé</a>
@@ -106,20 +105,16 @@
     <a href="/contact.html">Contact</a>
   </nav>
 
-
   <div class="container">
     <h1>Contact</h1>
-    <p>If you’d like to reach out, use the form below. It goes straight to me.</p>
+    <p>If you’d like to reach out, use the form below.</p>
 
-  <form action="https://formspree.io/f/xrenkbre" method="POST">
-    <input type="text" name="name" placeholder="Your name" required>
-    <input type="email" name="email" placeholder="Your email" required>
-    <textarea name="message" rows="6" placeholder="Your message" required></textarea>
-    <button type="submit">Send</button>
-  </form>
-
-
-    <p><a href="/">← Back to home</a></p>
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <input type="text" name="name" placeholder="Your name" required>
+      <input type="email" name="email" placeholder="Your email" required>
+      <textarea name="message" rows="6" placeholder="Your message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
   </div>
 
   <script>
@@ -133,5 +128,7 @@
       localStorage.setItem("theme", next);
     }
   </script>
+
 </body>
 </html>
+
