@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Projects – D.J. Nephew</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --text: #1e293b;
+      --accent: #2563eb;
+      --card: #eef2ff;
+    }
+    [data-theme="dark"] {
+      --bg: #0f172a;
+      --text: #e2e8f0;
+      --accent: #3b82f6;
+      --card: #1e293b;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: background 0.3s ease, color 0.3s ease;
+      line-height: 1.6;
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: var(--card);
+      border: 1px solid var(--accent);
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .project {
+      background: var(--card);
+      padding: 1rem;
+      border-left: 4px solid var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="theme-toggle" onclick="toggleTheme()">Toggle Theme</div>
+
+  <div class="container">
+    <h1>Projects & Things of Interest</h1>
+    <p>A few things I’ve worked on, explored, or found interesting.</p>
+
+    <div class="project">
+      <h2>Home Lab & Networking</h2>
+      <p>Multi‑site VLAN segmentation, IPv6, UDM Pro, NAS design, NFS mounts, and local LLM hosting.</p>
+    </div>
+
+    <div class="project">
+      <h2>Microwave Internet Tower Modernization</h2>
+      <p>Managed modernization of 15 remote tower sites across mountainous terrain.</p>
+    </div>
+
+    <div class="project">
+      <h2>Neuroimaging HPC Cluster</h2>
+      <p>Managed 500TB storage and ~800‑core compute cluster for 70+ research projects.</p>
+    </div>
+
+    <div class="project">
+      <h2>Outdoor & Travel Logistics</h2>
+      <p>Iceland glacier overlanding, New Zealand glider flights, multi‑continent travel planning.</p>
+    </div>
+
+    <p><a href="/">← Back to home</a></p>
+  </div>
+
+  <script>
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) document.documentElement.setAttribute("data-theme", savedTheme);
+
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute("data-theme");
+      const next = current === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      localStorage.setItem("theme", next);
+    }
+  </script>
+</body>
+</html>
