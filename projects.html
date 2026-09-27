@@ -94,29 +94,31 @@
     }
 
     /* Clickable project cards */
-    a.project {
-      cursor: pointer;
-      transition:
-        transform 0.15s ease,
-        background 0.15s ease;
-    }
+    
+a.project {
+  display: block;
+  background: var(--card);
+  padding: 1rem;
+  border-left: 4px solid var(--accent);
+  margin-bottom: 1.5rem;
+  color: var(--text);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
 
-    a.project:hover {
-      transform: translateX(4px);
-    }
+a.project h2,
+a.project p {
+  color: var(--text);
+}
 
-    a.project h2 {
-      color: var(--accent);
-    }
+a.project:hover {
+  transform: translateX(4px);
+}
 
-    .back-link {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    .back-link:hover {
-      text-decoration: underline;
-    }
+a.project:hover h2 {
+  color: var(--accent);
+}
   </style>
 </head>
 
