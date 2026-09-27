@@ -12,6 +12,7 @@
       --accent: #2563eb;
       --card: #eef2ff;
     }
+
     [data-theme="dark"] {
       --bg: #0f172a;
       --text: #e2e8f0;
@@ -21,27 +22,14 @@
 
     body {
       margin: 0;
-      font-family: system-ui, sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: var(--bg);
       color: var(--text);
       transition: background 0.3s ease, color 0.3s ease;
       line-height: 1.6;
     }
 
-    .theme-toggle {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      background: var(--card);
-      border: 1px solid var(--accent);
-      padding: 0.4rem 0.8rem;
-      border-radius: 999px;
-      cursor: pointer;
-      font-size: 0.9rem;
-      color: var(--text);
-      z-index: 200;
-    }
-
+    /* Navigation Bar */
     .nav {
       display: flex;
       gap: 1.5rem;
@@ -64,6 +52,21 @@
       text-decoration: underline;
     }
 
+    /* Dark Mode Toggle */
+    .theme-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: var(--card);
+      border: 1px solid var(--accent);
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      color: var(--text);
+      z-index: 200;
+    }
+
     .container {
       max-width: 900px;
       margin: 0 auto;
@@ -71,13 +74,49 @@
     }
 
     .project {
+      display: block;
       background: var(--card);
       padding: 1rem;
       border-left: 4px solid var(--accent);
       margin-bottom: 1.5rem;
+      color: var(--text);
+      text-decoration: none;
     }
 
-    a { color: var(--accent); text-decoration: none; }
+    .project h2 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+    }
+
+    .project p {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    /* Clickable project cards */
+    a.project {
+      cursor: pointer;
+      transition:
+        transform 0.15s ease,
+        background 0.15s ease;
+    }
+
+    a.project:hover {
+      transform: translateX(4px);
+    }
+
+    a.project h2 {
+      color: var(--accent);
+    }
+
+    .back-link {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 
@@ -86,51 +125,76 @@
   <div class="theme-toggle" onclick="toggleTheme()">Toggle Theme</div>
 
   <nav class="nav">
-    <a href="/">Home</a>
-    <a href="/resume.html">Résumé</a>
-    <a href="/projects.html">Projects</a>
-    <a href="/contact.html">Contact</a>
+    /Home</a>
+    /resume.htmlRésumé</a>
+    /projects.htmlProjects</a>
+    /contact.htmlContact</a>
   </nav>
 
+  <main class="container">
 
-  <div class="container">
-    <h1>Projects & Things of Interest</h1>
-    <p>A few things I’ve worked on, explored, or found interesting.  This will never be highly up to date - talking about what I am doing is 
-      somewhat less interesting than doing what I am doing.  Wrestling with HTML of what I am doing even less than that. </p>
+    <h1>Projects &amp; Things of Interest</h1>
+
+    <p>
+      A few things I’ve worked on, explored, or found interesting.
+      This will never be highly up to date - talking about what I am doing is
+      somewhat less interesting than doing what I am doing.
+      Wrestling with HTML of what I am doing even less than that.
+    </p>
 
     <div class="project">
-      <h2>Home Lab & Networking</h2>
-      <p>Homework - VLAN segmentation, IPv6, Home Assistant, UDM Pro, UNAS, AMP game server, and local LLM hosting.</p>
+      <h2>Home Lab &amp; Networking</h2>
+      <p>
+        Homework - VLAN segmentation, IPv6, Home Assistant, UDM Pro,
+        UNAS, AMP game server, and local LLM hosting.
+      </p>
     </div>
 
     <div class="project">
       <h2>Microwave Internet Tower Modernization</h2>
-      <p>Managed modernization of 15 remote tower sites across mountainous terrain. Best Job Ever.</p>
+      <p>
+        Managed modernization of 15 remote tower sites across mountainous
+        terrain. Best Job Ever.
+      </p>
     </div>
 
     <div class="project">
       <h2>Neuroimaging HPC Cluster</h2>
-      <p>Managed 500TB storage and ~800‑core compute cluster for 70+ research projects.</p>
+      <p>
+        Managed 500TB storage and ~800-core compute cluster for 70+
+        research projects.
+      </p>
     </div>
 
-    <div class="project">
+    /fireline.html
       <h2>A Story from the Fireline</h2>
       <p>I had a big day in Idaho this one time.</p>
-    </div>
+    </a>
 
-    <p><a href="/">← Back to home</a></p>
-  </div>
+    <p>
+      /← Back to home</a>
+    </p>
+
+  </main>
 
   <script>
     const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) document.documentElement.setAttribute("data-theme", savedTheme);
+
+    if (savedTheme) {
+      document.documentElement.setAttribute("data-theme", savedTheme);
+    }
 
     function toggleTheme() {
-      const current = document.documentElement.getAttribute("data-theme");
-      const next = current === "dark" ? "light" : "dark";
+      const current =
+        document.documentElement.getAttribute("data-theme");
+
+      const next =
+        current === "dark" ? "light" : "dark";
+
       document.documentElement.setAttribute("data-theme", next);
       localStorage.setItem("theme", next);
     }
   </script>
+
 </body>
 </html>
