@@ -39,7 +39,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      }
+    }
 
     .nav a {
       color: var(--text);
@@ -73,19 +73,18 @@
       padding: 2rem;
     }
 
+    /* Project Cards */
     .project {
       display: block;
+      box-sizing: border-box;
       background: var(--card);
       padding: 1rem;
       border-left: 4px solid var(--accent);
       margin-bottom: 1.5rem;
       color: var(--text);
       text-decoration: none;
-      transition: transform 0.15s ease, background 0.15s ease;
-    }
-
-    .project:hover {
-      transform: translateX(4px);
+      cursor: pointer;
+      transition: transform 0.15s ease;
     }
 
     .project h2 {
@@ -100,80 +99,75 @@
       color: var(--text);
     }
 
-    /* Clickable project cards */
-    
-a.project {
-  display: block;
-  background: var(--card);
-  padding: 1rem;
-  border-left: 4px solid var(--accent);
-  margin-bottom: 1.5rem;
-  color: var(--text);
-  text-decoration: none;
-  cursor: pointer;
-  transition: transform 0.15s ease;
-}
+    .project:hover {
+      transform: translateX(4px);
+    }
 
-a.project h2,
-a.project p {
-  color: var(--text);
-}
+    .project:hover h2 {
+      color: var(--accent);
+    }
 
-a.project:hover {
-  transform: translateX(4px);
-}
+    .back-link {
+      color: var(--accent);
+      text-decoration: none;
+    }
 
-a.project:hover h2 {
-  color: var(--accent);
-}
+    .back-link:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 
 <body>
 
   <div class="theme-toggle" onclick="toggleTheme()">Toggle Theme</div>
-  
 
   <!-- Navigation -->
   <nav class="nav">
-    <a href="/">Home</a>
-    <a href="/resume.html">Résumé</a>
-    <a href="/projects.html">Projects</a>
-    <a href="/contact.html">Contact</a>
+    /Home</a>
+    /resume.htmlRésumé</a>
+    /projects.htmlProjects</a>
+    /contact.htmlContact</a>
   </nav>
-  
+
   <main class="container">
 
     <h1>Projects &amp; Things of Interest</h1>
-    
+
+    <p>
+      A few things I’ve worked on, explored, or found interesting.
+      This will never be highly up to date - talking about what I am doing is
+      somewhat less interesting than doing what I am doing.
+      Wrestling with HTML of what I am doing even less than that.
+    </p>
+
     /homelab.html
-    <h2>Home Lab &amp; Networking</h2>
-    <p>
-    Homework - VLAN segmentation, IPv6, Home Assistant, UDM Pro,
-    UNAS, AMP game server, and local LLM hosting.
-    </p>
-      </a>
- 
+      <h2>Home Lab &amp; Networking</h2>
+      <p>
+        Homework - VLAN segmentation, IPv6, Home Assistant, UDM Pro,
+        UNAS, AMP game server, and local LLM hosting.
+      </p>
+    </a>
+
     /networking.html
-    <h2>Microwave Internet Tower Modernization</h2>
-    <p>
-    Managed modernization of 15 remote tower sites across mountainous terrain.
-    Best Job Ever.
-    </p>
+      <h2>Microwave Internet Tower Modernization</h2>
+      <p>
+        Managed modernization of 15 remote tower sites across mountainous terrain.
+        Best Job Ever.
+      </p>
     </a>
- 
+
     /CastleCreek.html
-    <h2>Neuroimaging HPC Cluster</h2>
-    <p>
-    Managed 500TB storage and ~800-core compute cluster for 70+ research projects.
-    </p>
+      <h2>Neuroimaging HPC Cluster</h2>
+      <p>
+        Managed 500TB storage and ~800-core compute cluster for 70+ research projects.
+      </p>
     </a>
- 
+
     /Fireline.html
-    <h2>A Story from the Fireline</h2>
-    <p>I had a big day in Idaho this one time.</p>
+      <h2>A Story from the Fireline</h2>
+      <p>I had a big day in Idaho this one time.</p>
     </a>
-      
 
     <p>
       /← Back to home</a>
