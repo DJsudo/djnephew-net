@@ -39,7 +39,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-    }
+      }
 
     .nav a {
       color: var(--text);
@@ -81,16 +81,23 @@
       margin-bottom: 1.5rem;
       color: var(--text);
       text-decoration: none;
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+
+    .project:hover {
+      transform: translateX(4px);
     }
 
     .project h2 {
       margin-top: 0;
       margin-bottom: 0.5rem;
+      color: var(--text);
     }
 
     .project p {
       margin-top: 0;
       margin-bottom: 0;
+      color: var(--text);
     }
 
     /* Clickable project cards */
